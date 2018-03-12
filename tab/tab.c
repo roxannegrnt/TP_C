@@ -8,7 +8,7 @@
 void FillRand(int tab[],int n){
 	srand(time(NULL));
 	for(int i=0; i<n; i++){
-		tab[i]= rand()%100;
+		tab[i]= rand()%10;
 	}
 }
 
@@ -39,14 +39,14 @@ void ReplaceMax(int tab[],int n){
 void Search(int tab[],int n){
 	int input= 0;
 	bool in= false;
-	printf("Please enter 1integer between 0 and 100 :\n");
+	printf("Please enter an integer between 0 and 10 :\n");
 	if (scanf("%d",&input)!=1){
 		printf("syntax error!\n");
 	}
 	else{
 		for(int i=0; i<n; i++){
 			if((tab[i] = input)){ 
-				in=true;
+				in= true;
 			}
 		}
 		if (in){
@@ -108,6 +108,12 @@ int main() {
 	const int SIZE = 10;
 	int tab[SIZE];
 	FillRand(tab,SIZE);
+	for(int i=0; i<SIZE; i++){
+		printf("%d\n", tab[i]);
+	}
+	Search(tab,SIZE);
+	
+	
     
 }
 
